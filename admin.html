@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Management & SQL Registry | Serendiva Nature Resort</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .admin-body {
+      background-color: #f7f5ef;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .admin-header {
+      background-color: var(--color-green);
+      color: #fff;
+      padding: 1.25rem 2rem;
+      border-bottom: 2px solid var(--color-olive);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .admin-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .admin-badge {
+      background: rgba(196, 190, 120, 0.2);
+      color: var(--color-olive);
+      border: 1px solid var(--color-olive);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .admin-nav {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .admin-nav a, .admin-nav button {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .admin-nav a:hover, .admin-nav button:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--color-olive);
+    }
+    .admin-content {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .kpi-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--color-green);
+    }
+    .kpi-card.gold::before { background: var(--color-olive); }
+    .kpi-card.rust::before { background: var(--color-rust); }
+    .kpi-label {
+      font-size: 0.825rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .kpi-value {
+      font-size: 2.2rem;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      color: var(--color-green);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .kpi-sub {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+    .card-box {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-subtle);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .card-box-header {
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: #faf8f3;
+    }
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .tab-btn {
+      padding: 0.5rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      background: #fff;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--color-green);
+      color: #fff;
+      border-color: var(--color-green);
+    }
+    .toolbar-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.5rem 0.75rem 0.5rem 2rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      font-size: 0.9rem;
+      outline: none;
+      background: #fff;
+    }
+    .search-icon {
+      position: absolute;
+      left: 0.65rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .filter-select {
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      font-size: 0.9rem;
+      background: #fff;
+      cursor: pointer;
+      outline: none;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      width: 100%;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .data-table th {
+      background: #f4efe4;
+      padding: 0.85rem 1.2rem;
+      font-weight: 600;
+      color: var(--color-green);
+      border-bottom: 1px solid var(--color-border);
+      white-space: nowrap;
+    }
+    .data-table td {
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: middle;
+    }
+    .data-table tr:hover {
+      background-color: #faf8f5;
+    }
+    .badge-status {
+      display: inline-block;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .status-confirmed {
+      background: #eaf8ee;
+      color: #1b5e20;
+      border: 1px solid #c8e6c9;
+    }
+    .status-pending {
+      background: #fff8e1;
+      color: #b78103;
+      border: 1px solid #ffe082;
+    }
+    .status-cancelled {
+      background: #ffebee;
+      color: #c62828;
+      border: 1px solid #ffcdd2;
+    }
+    .action-btn-group {
+      display: flex;
+      gap: 0.35rem;
+    }
+    .btn-action {
+      background: none;
+      border: 1px solid var(--color-border);
+      padding: 0.3rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: var(--color-text-muted);
+      transition: all 0.15s ease;
+    }
+    .btn-action:hover {
+      background: var(--color-green);
+      color: #fff;
+      border-color: var(--color-green);
+    }
+    .btn-action.delete:hover {
+      background: #c62828;
+      border-color: #c62828;
+      color: #fff;
+    }
+    .status-connection-banner {
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+    .banner-ok {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #a5d6a7;
+    }
+    .banner-err {
+      background: #ffebee;
+      color: #c62828;
+      border: 1px solid #ef9a9a;
+    }
+    /* Modal styles */
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.9rem;
+    }
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--color-text-muted);
+    }
+    .admin-brand-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .admin-logo-icon {
+      font-size: 1.5rem;
+    }
+    .admin-logo-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      margin: 0;
+      line-height: 1;
+    }
+    .admin-logo-sub {
+      font-size: 0.75rem;
+      color: var(--color-olive);
+      letter-spacing: 0.1em;
+    }
+    .is-hidden {
+      display: none;
+    }
+    .kpi-pending-color {
+      color: #b78103;
+    }
+    .kpi-rust-color {
+      color: var(--color-rust);
+    }
+    .modal-box-detail {
+      max-width: 550px;
+    }
+    .modal-guest-header {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .modal-details-content {
+      margin-bottom: 1.5rem;
+    }
+    .modal-btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+    .admin-footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
+      background: #fff;
+    }
+  </style>
+</head>
+<body class="admin-body">
+
+  <!-- Header -->
+  <header class="admin-header">
+    <div class="admin-title-wrap">
+      <a href="index.html" class="admin-brand-link">
+        <span class="admin-logo-icon">🍃</span>
+        <div>
+          <h1 class="admin-logo-title">SERENDIVA NATURE RESORT</h1>
+          <span class="admin-logo-sub">INTERNAL GUEST REGISTRY</span>
+        </div>
+      </a>
+      <span class="admin-badge">MySQL 8.0 Connected</span>
+    </div>
+
+    <nav class="admin-nav">
+      <a href="index.html" target="_blank">🌐 View Guest Website</a>
+      <a href="rooms.html" target="_blank">🛏️ Chalets</a>
+      <a href="dining.html" target="_blank">🍽️ Restaurant</a>
+      <button onclick="loadAllData()">🔄 Refresh</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="admin-content">
+    
+    <!-- Connection Status Banner -->
+    <div id="connStatusBanner" class="status-connection-banner banner-ok is-hidden">
+      <span id="connStatusText">Checking MySQL 8.0 connection...</span>
+      <small id="connTimestamp"></small>
+    </div>
+
+    <!-- Live KPI Metrics Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <span class="kpi-label">Total Room Bookings</span>
+        <div class="kpi-value" id="kpiTotalBookings">0</div>
+        <span class="kpi-sub" id="kpiConfirmedCount">0 Confirmed in MySQL</span>
+      </div>
+
+      <div class="kpi-card gold">
+        <span class="kpi-label">Estimated Revenue</span>
+        <div class="kpi-value" id="kpiTotalRevenue">$0</div>
+        <span class="kpi-sub">Calculated from confirmed stays</span>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Pending Verifications</span>
+        <div class="kpi-value kpi-pending-color" id="kpiPendingCount">0</div>
+        <span class="kpi-sub">Awaiting concierge check</span>
+      </div>
+
+      <div class="kpi-card rust">
+        <span class="kpi-label">Dining Reservations</span>
+        <div class="kpi-value kpi-rust-color" id="kpiTotalDining">0</div>
+        <span class="kpi-sub" id="kpiInquiriesSub">0 General Inquiries</span>
+      </div>
+    </div>
+
+    <!-- Registry Tables Box -->
+    <div class="card-box">
+      <div class="card-box-header">
+        <div class="tab-bar">
+          <button class="tab-btn active" id="tabBookings" onclick="switchTab('bookings')">Room Bookings</button>
+          <button class="tab-btn" id="tabDining" onclick="switchTab('dining')">Dining Table Reservations</button>
+          <button class="tab-btn" id="tabInquiries" onclick="switchTab('inquiries')">Concierge Inquiries</button>
+        </div>
+
+        <div class="toolbar-actions" id="toolbarActions">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search reference, guest, email..." oninput="handleSearch()">
+          </div>
+          <select id="statusFilter" class="filter-select" title="Filter by status" aria-label="Filter by status" onchange="handleFilter()">
+            <option value="all">All Statuses</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Pending">Pending</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Tab 1: Room Bookings Table -->
+      <div id="viewBookings" class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Reference</th>
+              <th>Lead Guest</th>
+              <th>Chalet / Suite</th>
+              <th>Dates</th>
+              <th>Duration</th>
+              <th>Total ($)</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsTableBody">
+            <tr>
+              <td colspan="8" class="empty-state">Loading reservations from MySQL...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tab 2: Dining Reservations Table -->
+      <div id="viewDining" class="table-responsive is-hidden">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Ref No.</th>
+              <th>Guest Name</th>
+              <th>Contact Phone</th>
+              <th>Reservation Date</th>
+              <th>Time Slot</th>
+              <th>Guests</th>
+              <th>Ambiance Preference</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="diningTableBody">
+            <tr>
+              <td colspan="8" class="empty-state">Loading dining bookings...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tab 3: Contact Inquiries Table -->
+      <div id="viewInquiries" class="table-responsive is-hidden">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Sender Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Subject</th>
+              <th>Message</th>
+              <th>Received</th>
+            </tr>
+          </thead>
+          <tbody id="inquiriesTableBody">
+            <tr>
+              <td colspan="7" class="empty-state">Loading guest inquiries...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Booking Details Modal -->
+  <div class="modal-backdrop" id="detailModal">
+    <div class="modal-box modal-box-detail">
+      <button class="modal-close-btn" onclick="closeDetailModal()">&times;</button>
+      <span class="section-eyebrow">Reservation Record</span>
+      <h3 class="modal-guest-header" id="modalGuestHeader">Guest Details</h3>
+      
+      <div id="modalDetailsContent" class="modal-details-content">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="modal-btn-row">
+        <button class="btn btn-outline" onclick="closeDetailModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="admin-footer">
+    Serendiva Nature Resort &copy; 2026 &bull; SQL Backend Management &bull; Ella, Sri Lanka
+  </footer>
+
+  <!-- Admin Controller Script -->
+  <script>
+    let currentTab = 'bookings';
+    let allBookings = [];
+    let allDining = [];
+    let allInquiries = [];
+
+    // API Call Dispatcher (PHP backend in api/*.php)
+    async function apiCall(endpoint, options = {}) {
+      const method = options.method || 'GET';
+      const body = options.body ? JSON.stringify(options.body) : null;
+      const headers = options.headers || { 'Content-Type': 'application/json' };
+      const queryStr = options.query ? '?' + new URLSearchParams(options.query).toString() : '';
+
+      const res = await fetch(`api/${endpoint}.php${queryStr}`, { method, headers, body });
+      return await res.json();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      checkHealth();
+      loadAllData();
+      setInterval(checkHealth, 30000);
+    });
+
+    async function checkHealth() {
+      const banner = document.getElementById('connStatusBanner');
+      const text = document.getElementById('connStatusText');
+      const time = document.getElementById('connTimestamp');
+      try {
+        const data = await apiCall('stats');
+        banner.style.display = 'flex';
+        if (data && (data.success || data.database_connected)) {
+          banner.className = 'status-connection-banner banner-ok';
+          text.innerHTML = `<strong>Connected:</strong> MySQL 8.0 server active (database: <code>serendiva_resort</code>).`;
+          time.textContent = new Date().toLocaleTimeString();
+        } else {
+          banner.className = 'status-connection-banner banner-err';
+          text.innerHTML = `<strong>Notice:</strong> ${data.error || 'Database disconnected'}`;
+          time.textContent = 'Disconnected';
+        }
+      } catch (err) {
+        banner.style.display = 'flex';
+        banner.className = 'status-connection-banner banner-err';
+        text.innerHTML = `<strong>Backend Offline:</strong> Ensure your PHP server (Apache / XAMPP) and MySQL 8.0 are active.`;
+      }
+    }
+
+    async function loadAllData() {
+      await Promise.all([
+        fetchStats(),
+        fetchBookings(),
+        fetchDining(),
+        fetchInquiries()
+      ]);
+    }
+
+    async function fetchStats() {
+      try {
+        const data = await apiCall('stats');
+        if (data.success && data.stats) {
+          const s = data.stats;
+          document.getElementById('kpiTotalBookings').textContent = s.total_bookings;
+          document.getElementById('kpiConfirmedCount').textContent = `${s.confirmed_bookings} Confirmed in MySQL`;
+          document.getElementById('kpiTotalRevenue').textContent = `$${s.total_revenue.toLocaleString('en-US', { minimumFractionDigits: 0 })}`;
+          document.getElementById('kpiPendingCount').textContent = s.pending_bookings;
+          document.getElementById('kpiTotalDining').textContent = s.total_dining;
+          document.getElementById('kpiInquiriesSub').textContent = `${s.total_inquiries} General Inquiries`;
+        }
+      } catch (err) {
+        console.error('Failed to load stats:', err);
+      }
+    }
+
+    async function fetchBookings() {
+      const tbody = document.getElementById('bookingsTableBody');
+      try {
+        const data = await apiCall('bookings');
+        if (data.success) {
+          allBookings = data.bookings || [];
+          renderBookings(allBookings);
+        } else {
+          tbody.innerHTML = `<tr><td colspan="8" class="empty-state">${data.error || 'Failed to load bookings'}</td></tr>`;
+        }
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">Could not connect to MySQL backend API.</td></tr>`;
+      }
+    }
+
+    function renderBookings(list) {
+      const tbody = document.getElementById('bookingsTableBody');
+      if (!list || list.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">No room bookings found in the database.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = list.map(b => {
+        const statusClass = b.status === 'Confirmed' ? 'status-confirmed' : (b.status === 'Pending' ? 'status-pending' : 'status-cancelled');
+        return `
+          <tr>
+            <td><strong style="color: var(--color-green); font-family: monospace; font-size: 0.95rem;">${escapeHtml(b.reference_no)}</strong></td>
+            <td>
+              <div><strong>${escapeHtml(b.guest_name)}</strong></div>
+              <small style="color: var(--color-text-muted);">${escapeHtml(b.email)}</small>
+            </td>
+            <td>${escapeHtml(b.room_type)}</td>
+            <td>
+              <span style="font-size: 0.85rem;">${escapeHtml(b.check_in)} &rarr; ${escapeHtml(b.check_out)}</span>
+            </td>
+            <td>${b.nights} nt (${b.guests} pax)</td>
+            <td><strong style="color: var(--color-rust);">$${Number(b.total_price).toFixed(2)}</strong></td>
+            <td><span class="badge-status ${statusClass}">${b.status}</span></td>
+            <td>
+              <div class="action-btn-group">
+                <button class="btn-action" title="View Details" onclick="viewBookingDetails(${b.id})">👁️</button>
+                <button class="btn-action" title="Mark Confirmed" onclick="updateStatus(${b.id}, 'Confirmed')">✓</button>
+                <button class="btn-action" title="Mark Cancelled" onclick="updateStatus(${b.id}, 'Cancelled')">✕</button>
+                <button class="btn-action delete" title="Delete" onclick="deleteBooking(${b.id})">🗑️</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    async function fetchDining() {
+      const tbody = document.getElementById('diningTableBody');
+      try {
+        const res = await fetch('/api/dining');
+        const data = await res.json();
+        if (data.success) {
+          allDining = data.reservations || [];
+          renderDining(allDining);
+        }
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">Unable to load dining bookings.</td></tr>`;
+      }
+    }
+
+    function renderDining(list) {
+      const tbody = document.getElementById('diningTableBody');
+      if (!list || list.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">No dining reservations found.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = list.map(d => `
+        <tr>
+          <td><code style="color: var(--color-green);">${escapeHtml(d.reservation_no)}</code></td>
+          <td><strong>${escapeHtml(d.guest_name)}</strong></td>
+          <td>${escapeHtml(d.phone)}</td>
+          <td>${escapeHtml(d.reservation_date)}</td>
+          <td>${escapeHtml(d.reservation_time)}</td>
+          <td>${escapeHtml(d.guest_count)} Guests</td>
+          <td>${escapeHtml(d.seating_preference || '-')}</td>
+          <td><span class="badge-status status-confirmed">${d.status}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    async function fetchDining() {
+      const tbody = document.getElementById('diningTableBody');
+      try {
+        const data = await apiCall('dining');
+        if (data.success) {
+          allDining = data.reservations || [];
+          renderDining(allDining);
+        }
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">Unable to load dining bookings.</td></tr>`;
+      }
+    }
+
+    function renderDining(list) {
+      const tbody = document.getElementById('diningTableBody');
+      if (!list || list.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">No dining reservations found.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = list.map(d => `
+        <tr>
+          <td><code style="color: var(--color-green);">${escapeHtml(d.reservation_no)}</code></td>
+          <td><strong>${escapeHtml(d.guest_name)}</strong></td>
+          <td>${escapeHtml(d.phone)}</td>
+          <td>${escapeHtml(d.reservation_date)}</td>
+          <td>${escapeHtml(d.reservation_time)}</td>
+          <td>${escapeHtml(d.guest_count)} Guests</td>
+          <td>${escapeHtml(d.seating_preference || '-')}</td>
+          <td><span class="badge-status status-confirmed">${d.status}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    async function fetchInquiries() {
+      const tbody = document.getElementById('inquiriesTableBody');
+      try {
+        const data = await apiCall('contact');
+        if (data.success) {
+          allInquiries = data.inquiries || [];
+          renderInquiries(allInquiries);
+        }
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="7" class="empty-state">Unable to load inquiries.</td></tr>`;
+      }
+    }
+
+    function renderInquiries(list) {
+      const tbody = document.getElementById('inquiriesTableBody');
+      if (!list || list.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="empty-state">No messages in inbox.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = list.map(q => `
+        <tr>
+          <td>#${q.id}</td>
+          <td><strong>${escapeHtml(q.name)}</strong></td>
+          <td><a href="mailto:${escapeHtml(q.email)}" style="color: var(--color-green);">${escapeHtml(q.email)}</a></td>
+          <td>${escapeHtml(q.phone || '-')}</td>
+          <td><span class="badge-status status-pending">${escapeHtml(q.subject)}</span></td>
+          <td style="max-width: 300px; white-space: pre-wrap; font-size: 0.85rem;">${escapeHtml(q.message)}</td>
+          <td><small style="color: var(--color-text-muted);">${escapeHtml(q.created_at || '-')}</small></td>
+        </tr>
+      `).join('');
+    }
+
+    // Filter and search handlers
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const status = document.getElementById('statusFilter').value;
+
+      let filtered = allBookings.filter(b => {
+        const matchesQuery = !query || 
+          b.reference_no.toLowerCase().includes(query) ||
+          b.guest_name.toLowerCase().includes(query) ||
+          b.email.toLowerCase().includes(query) ||
+          b.room_type.toLowerCase().includes(query);
+        const matchesStatus = status === 'all' || b.status === status;
+        return matchesQuery && matchesStatus;
+      });
+
+      renderBookings(filtered);
+    }
+
+    function handleFilter() {
+      handleSearch();
+    }
+
+    // Switch Tabs
+    function switchTab(tab) {
+      currentTab = tab;
+      document.getElementById('tabBookings').classList.toggle('active', tab === 'bookings');
+      document.getElementById('tabDining').classList.toggle('active', tab === 'dining');
+      document.getElementById('tabInquiries').classList.toggle('active', tab === 'inquiries');
+
+      document.getElementById('viewBookings').style.display = tab === 'bookings' ? 'block' : 'none';
+      document.getElementById('viewDining').style.display = tab === 'dining' ? 'block' : 'none';
+      document.getElementById('viewInquiries').style.display = tab === 'inquiries' ? 'block' : 'none';
+
+      document.getElementById('toolbarActions').style.display = tab === 'bookings' ? 'flex' : 'none';
+    }
+
+    // Status Update
+    async function updateStatus(id, newStatus) {
+      try {
+        const data = await apiCall('bookings', {
+          method: 'PATCH',
+          query: { action: 'status', id },
+          body: { id, status: newStatus }
+        });
+        if (data.success) {
+          fetchBookings();
+          fetchStats();
+        } else {
+          alert(data.error || 'Failed to update status');
+        }
+      } catch (err) {
+        alert('Network error while updating status');
+      }
+    }
+
+    // Delete Booking
+    async function deleteBooking(id) {
+      if (!confirm(`Are you sure you want to permanently delete reservation #${id} from MySQL?`)) return;
+      try {
+        const data = await apiCall('bookings', {
+          method: 'DELETE',
+          query: { action: 'delete', id },
+          body: { id }
+        });
+        if (data.success) {
+          fetchBookings();
+          fetchStats();
+        } else {
+          alert(data.error || 'Failed to delete');
+        }
+      } catch (err) {
+        alert('Network error while deleting');
+      }
+    }
+
+    // Modal Details
+    function viewBookingDetails(id) {
+      const b = allBookings.find(x => x.id === id);
+      if (!b) return;
+
+      document.getElementById('modalGuestHeader').textContent = `${b.guest_name} (${b.reference_no})`;
+      document.getElementById('modalDetailsContent').innerHTML = `
+        <div class="detail-row"><span>Reference:</span><strong>${escapeHtml(b.reference_no)}</strong></div>
+        <div class="detail-row"><span>Status:</span><span class="badge-status ${b.status === 'Confirmed' ? 'status-confirmed' : 'status-pending'}">${b.status}</span></div>
+        <div class="detail-row"><span>Chalet:</span><strong>${escapeHtml(b.room_type)}</strong></div>
+        <div class="detail-row"><span>Check-in:</span><span>${escapeHtml(b.check_in)}</span></div>
+        <div class="detail-row"><span>Check-out:</span><span>${escapeHtml(b.check_out)}</span></div>
+        <div class="detail-row"><span>Duration:</span><span>${b.nights} night(s)</span></div>
+        <div class="detail-row"><span>Guests:</span><span>${b.guests} adult(s)</span></div>
+        <div class="detail-row"><span>Meal Plan:</span><span>${escapeHtml(b.meal_plan ? b.meal_plan.toUpperCase() : 'B&B')}</span></div>
+        <div class="detail-row"><span>Contact Email:</span><span>${escapeHtml(b.email)}</span></div>
+        <div class="detail-row"><span>Contact Phone:</span><span>${escapeHtml(b.phone || 'Not provided')}</span></div>
+        <div class="detail-row"><span>Special Notes:</span><span>${escapeHtml(b.special_requests || 'None')}</span></div>
+        <div class="detail-row" style="font-weight: 700; color: var(--color-rust); font-size: 1.1rem; border-top: 2px solid #ddd; margin-top: 0.5rem; padding-top: 0.5rem;">
+          <span>Total Payable:</span>
+          <span>$${Number(b.total_price).toFixed(2)}</span>
+        </div>
+      `;
+
+      document.getElementById('detailModal').classList.add('active');
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detailModal').classList.remove('active');
+    }
+
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>
