@@ -657,39 +657,6 @@
       }).join('');
     }
 
-    async function fetchDining() {
-      const tbody = document.getElementById('diningTableBody');
-      try {
-        const res = await fetch('/api/dining');
-        const data = await res.json();
-        if (data.success) {
-          allDining = data.reservations || [];
-          renderDining(allDining);
-        }
-      } catch (err) {
-        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">Unable to load dining bookings.</td></tr>`;
-      }
-    }
-
-    function renderDining(list) {
-      const tbody = document.getElementById('diningTableBody');
-      if (!list || list.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">No dining reservations found.</td></tr>`;
-        return;
-      }
-      tbody.innerHTML = list.map(d => `
-        <tr>
-          <td><code style="color: var(--color-green);">${escapeHtml(d.reservation_no)}</code></td>
-          <td><strong>${escapeHtml(d.guest_name)}</strong></td>
-          <td>${escapeHtml(d.phone)}</td>
-          <td>${escapeHtml(d.reservation_date)}</td>
-          <td>${escapeHtml(d.reservation_time)}</td>
-          <td>${escapeHtml(d.guest_count)} Guests</td>
-          <td>${escapeHtml(d.seating_preference || '-')}</td>
-          <td><span class="badge-status status-confirmed">${d.status}</span></td>
-        </tr>
-      `).join('');
-    }
 
     async function fetchDining() {
       const tbody = document.getElementById('diningTableBody');
