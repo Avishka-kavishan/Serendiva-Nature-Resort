@@ -109,7 +109,7 @@
       </div>
 
       <!-- Menu Category Tabs -->
-      <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+      <div class="menu-tabs-row">
         <button class="btn-outline active menu-tab-btn" data-category="all">All Items</button>
         <button class="btn-outline menu-tab-btn" data-category="curries">Sri Lankan Curries</button>
         <button class="btn-outline menu-tab-btn" data-category="seafood">Coastal Seafood</button>
@@ -129,7 +129,7 @@
             <p class="card-text">Steamed red rice served with 5 village vegetable curries, coconut dhal, pol sambol, and papadam.</p>
             <div class="card-footer">
               <span class="card-price">$18</span>
-              <span style="font-size: 0.85rem; color: var(--color-green); font-weight: 600;">Traditional</span>
+              <span class="badge-tag-green">Traditional</span>
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@
             <p class="card-text">Fresh crab cooked with crushed black peppercorns, garlic, curry leaves, and toasted local spices.</p>
             <div class="card-footer">
               <span class="card-price">$32</span>
-              <span style="font-size: 0.85rem; color: var(--color-rust); font-weight: 600;">Chef's Special</span>
+              <span class="badge-tag-rust">Chef's Special</span>
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@
             <p class="card-text">Crisp bowl-shaped rice flour pancakes served with spicy onion seeni sambol and traditional lunu miris.</p>
             <div class="card-footer">
               <span class="card-price">$12</span>
-              <span style="font-size: 0.85rem; color: var(--color-green); font-weight: 600;">Breakfast Special</span>
+              <span class="badge-tag-green">Breakfast Special</span>
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@
             <p class="card-text">Chilled natural coconut water served straight in the shell with fresh lime.</p>
             <div class="card-footer">
               <span class="card-price">$5</span>
-              <span style="font-size: 0.85rem; color: var(--color-green); font-weight: 600;">Fresh & Natural</span>
+              <span class="badge-tag-green">Fresh & Natural</span>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
             <p class="card-text">Hand-picked white tea leaves from Nuwara Eliya hills, brewed lightly in porcelain pots.</p>
             <div class="card-footer">
               <span class="card-price">$7</span>
-              <span style="font-size: 0.85rem; color: var(--color-olive); font-weight: 700;">Local Blend</span>
+              <span class="badge-tag-olive">Local Blend</span>
             </div>
           </div>
         </div>
@@ -199,7 +199,7 @@
             <p class="card-text">Young jackfruit slow-cooked in clay pot with roasted spices, goraka, and thick coconut cream.</p>
             <div class="card-footer">
               <span class="card-price">$14</span>
-              <span style="font-size: 0.85rem; color: var(--color-green); font-weight: 600;">Vegan</span>
+              <span class="badge-tag-green">Vegan</span>
             </div>
           </div>
         </div>
@@ -218,20 +218,20 @@
       </div>
 
       <div class="grid-3">
-        <div class="card" style="padding: 2rem;">
-          <div style="font-size: 2.2rem; margin-bottom: 1rem;">🏊‍♂️</div>
+        <div class="card card-p-2">
+          <div class="feature-emoji">🏊‍♂️</div>
           <h3 class="card-title">Hillside Outdoor Pool</h3>
           <p class="card-text">Natural spring-water pool overlooking the Ella valley and forest gap. Open daily for resident guests.</p>
         </div>
 
-        <div class="card" style="padding: 2rem;">
-          <div style="font-size: 2.2rem; margin-bottom: 1rem;">🌿</div>
+        <div class="card card-p-2">
+          <div class="feature-emoji">🌿</div>
           <h3 class="card-title">Ayurvedic Wellness Spa</h3>
           <p class="card-text">Herbal oil treatments, herbal steam baths, and relaxation therapies administered by experienced therapists.</p>
         </div>
 
-        <div class="card" style="padding: 2rem;">
-          <div style="font-size: 2.2rem; margin-bottom: 1rem;">🥾</div>
+        <div class="card card-p-2">
+          <div class="feature-emoji">🥾</div>
           <h3 class="card-title">Guided Nature Treks</h3>
           <p class="card-text">Morning walks to Ella Rock viewpoints, hidden streams, and local tea estate paths with resort guides.</p>
         </div>
@@ -244,13 +244,13 @@
     <div class="modal-content">
       <button class="modal-close" id="modalClose">&times;</button>
       <span class="section-tag">Online Booking</span>
-      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-green); margin-bottom: 0.5rem;">Reserve Your Stay</h3>
-      <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+      <h3 class="modal-title-custom">Reserve Your Stay</h3>
+      <p class="modal-desc-custom">
         Select your stay dates to see price estimates and submit your reservation details.
       </p>
 
       <form id="reservationForm">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="grid-form-2">
           <div class="form-group">
             <label class="form-label" for="resCheckIn">Check-in Date</label>
             <input type="date" id="resCheckIn" name="check_in" class="form-input" required>
@@ -261,7 +261,7 @@
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="grid-form-2">
           <div class="form-group">
             <label class="form-label" for="resRoomType">Chalet Category</label>
             <select id="resRoomType" name="room_type" class="form-select">
@@ -281,7 +281,7 @@
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="grid-form-2">
           <div class="form-group">
             <label class="form-label" for="resName">Full Name</label>
             <input type="text" id="resName" name="full_name" class="form-input" placeholder="e.g. John Smith" required>
@@ -292,18 +292,18 @@
           </div>
         </div>
 
-        <div style="background-color: var(--color-cream-alt); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem; border: 1px dashed var(--color-border);">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.95rem;">
+        <div class="booking-summary-box">
+          <div class="booking-summary-row">
             <span>Calculated Nights:</span>
             <strong id="displayNights">2 nights</strong>
           </div>
-          <div style="display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; color: var(--color-rust); border-top: 1px solid var(--color-border); padding-top: 0.5rem;">
+          <div class="booking-summary-total">
             <span>Estimated Total:</span>
             <span id="displayTotal">$320</span>
           </div>
         </div>
 
-        <button type="submit" class="btn-book-now" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 0.8rem;">
+        <button type="submit" class="btn-book-now btn-book-submit">
           Confirm Booking
         </button>
       </form>
@@ -315,8 +315,8 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div style="background: rgba(251, 248, 241, 0.95); display: inline-block; padding: 4px 10px; border-radius: 6px; margin-bottom: 0.75rem;">
-            <img src="assets/images/logo.png" alt="Serendiva" style="height: 40px; width: auto; display: block;">
+          <div class="footer-logo-badge">
+            <img src="assets/images/logo.png" alt="Serendiva" class="footer-logo-img">
           </div>
           <p class="footer-text">
             Eco-friendly nature retreat in Ella, Sri Lanka. Quiet chalets, home-style cuisine, and guided forest tours.
@@ -327,34 +327,41 @@
           <h4 class="footer-heading">Navigation</h4>
           <div class="footer-links-list">
             <a href="index.html" class="footer-link">Home</a>
-            <a href="about.html" class="footer-link">About</a>
-            <a href="services.html" class="footer-link">Services</a>
+            <a href="rooms.html" class="footer-link">Chalets & Suites</a>
+            <a href="dining.html" class="footer-link">Dining & Menu</a>
+            <a href="facilities.html" class="footer-link">Experiences</a>
+            <a href="about.html" class="footer-link">Our Story</a>
             <a href="news.html" class="footer-link">News and Events</a>
             <a href="contact.html" class="footer-link">Contact</a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-heading">Services</h4>
+          <h4 class="footer-heading">Experiences</h4>
           <div class="footer-links-list">
-            <a href="services.html" class="footer-link">Forest Chalets</a>
-            <a href="services.html#dining" class="footer-link">Restaurant Menu</a>
-            <a href="services.html#wellness" class="footer-link">Ayurvedic Spa</a>
-            <a href="services.html#activities" class="footer-link">Nature Treks</a>
+            <a href="rooms.html" class="footer-link">Forest Chalets</a>
+            <a href="facilities.html" class="footer-link">Natural Infinity Pool</a>
+            <a href="facilities.html" class="footer-link">Ayurvedic Spa</a>
+            <a href="facilities.html" class="footer-link">Rainforest Trails</a>
+            <a href="facilities.html" class="footer-link">Ceylon Tea Tasting</a>
+            <a href="dining.html" class="footer-link">Clay Pot Dining</a>
           </div>
         </div>
 
         <div>
           <h4 class="footer-heading">Contact Us</h4>
-          <p style="font-size: 0.9rem; color: #d1d8d2; margin-bottom: 0.5rem;">📍 Passara Road, Ella, Sri Lanka</p>
-          <p style="font-size: 0.9rem; color: #d1d8d2; margin-bottom: 0.5rem;">📞 +94 57 222 8890</p>
-          <p style="font-size: 0.9rem; color: #d1d8d2;">✉️ stay@serendivaresort.lk</p>
+          <p class="footer-contact-item">📍 Passara Road, Ella, Sri Lanka</p>
+          <p class="footer-contact-item">📞 +94 57 222 8890 / +94 77 123 4567</p>
+          <p class="footer-contact-item">✉️ stay@serendivaresort.lk</p>
+          <p class="footer-contact-item">🕒 Concierge: 06:30 AM – 10:00 PM</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 Serendiva Nature Resort. All rights reserved.</div>
-        <div>Built for Web Application Development Project.</div>
+        <div>&copy; 2026 Serendiva Nature Resort. All rights reserved. Registered with SLTDA.</div>
+        <div class="footer-admin-link-row">
+          <a href="admin.html" class="footer-admin-link">🔒 Staff Portal & SQL Registry</a>
+        </div>
       </div>
     </div>
   </footer>

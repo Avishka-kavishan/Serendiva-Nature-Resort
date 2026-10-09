@@ -19,7 +19,7 @@
         <a href="mailto:stay@serendivaresort.lk">✉️ stay@serendivaresort.lk</a>
       </div>
       <div class="top-bar-tools">
-        <span style="font-size:0.75rem;">Currency:</span>
+        <span class="topbar-currency-label">Currency:</span>
         <div class="currency-toggle">
           <button class="currency-btn active" data-currency="USD">USD ($)</button>
           <button class="currency-btn" data-currency="LKR">LKR (Rs.)</button>
@@ -56,7 +56,7 @@
   </header>
 
   <!-- Dining Hero Banner -->
-  <section class="hero-section" style="background-image: url('assets/images/dining.jpg'); min-height: 60vh;">
+  <section class="hero-section dining-hero-banner">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="hero-tag">🌶️ Farm-to-Table Gastronomy</div>
@@ -85,20 +85,20 @@
         <div>
           <span class="section-eyebrow">Our Kitchen Heritage</span>
           <h2 class="section-title">Cooked with Firewood, Clay Pots & Heartfelt Passion</h2>
-          <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 1.25rem;">
+          <p class="dining-heritage-lead">
             At Serendiva, every meal is an authentic Sri Lankan ritual. We grind our own roasted curry powders daily from whole coriander, cumin, and true Ceylon cinnamon bark.
           </p>
-          <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">
+          <p class="dining-heritage-body">
             Slow earthen clay pot simmering allows spices to infuse deeply into fresh seafood brought daily from the southern coast, heirloom red rice harvested from local paddies, and wild herbs plucked from our garden.
           </p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
-            <div style="background: var(--color-bg-sand); padding: 1rem; border-radius: var(--radius-md);">
-              <h4 style="color: var(--color-primary); font-size: 1rem; margin-bottom: 0.25rem;">Earthen Clay Pots</h4>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Maintains natural aroma and moisture without artificial additives.</p>
+          <div class="dining-feature-grid">
+            <div class="dining-feature-card">
+              <h4 class="dining-feature-title">Earthen Clay Pots</h4>
+              <p class="dining-feature-text">Maintains natural aroma and moisture without artificial additives.</p>
             </div>
-            <div style="background: var(--color-bg-sand); padding: 1rem; border-radius: var(--radius-md);">
-              <h4 style="color: var(--color-primary); font-size: 1rem; margin-bottom: 0.25rem;">Virgin Coconut Milk</h4>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Freshly pressed by hand from estate coconut palms every sunrise.</p>
+            <div class="dining-feature-card">
+              <h4 class="dining-feature-title">Virgin Coconut Milk</h4>
+              <p class="dining-feature-text">Freshly pressed by hand from estate coconut palms every sunrise.</p>
             </div>
           </div>
           <a href="#reserveTable" class="btn btn-outline-dark">Book an Outdoor Table</a>
@@ -108,9 +108,9 @@
   </section>
 
   <!-- Interactive Menu Section -->
-  <section class="section-padding" id="menuSection" style="background-color: var(--color-bg-sand);">
+  <section class="section-padding bg-sand-section" id="menuSection">
     <div class="container">
-      <div class="text-center" style="margin-bottom: 2.5rem;">
+      <div class="text-center dining-menu-header">
         <span class="section-eyebrow">Our Seasonal A-La-Carte</span>
         <h2 class="section-title">Curated Restaurant Menu</h2>
         <p class="section-subtitle">
@@ -317,18 +317,18 @@
 
   <!-- Table Reservation Section -->
   <section class="section-padding" id="reserveTable">
-    <div class="container" style="max-width: 800px;">
-      <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 3rem 2.5rem; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-        <div class="text-center" style="margin-bottom: 2rem;">
+    <div class="container container-max-800">
+      <div class="dining-booking-card">
+        <div class="text-center dining-booking-header">
           <span class="section-eyebrow">Table Booking</span>
-          <h2 class="section-title" style="font-size: 2.2rem;">Reserve Your Dining Experience</h2>
-          <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+          <h2 class="section-title dining-booking-title">Reserve Your Dining Experience</h2>
+          <p class="dining-booking-subtitle">
             Both in-house and visiting guests are welcomed. Please reserve at least 2 hours in advance for clay pot buffets or special dietary requirements.
           </p>
         </div>
 
         <form id="tableBookingForm">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="grid-form-2 mb-3">
             <div class="form-group">
               <label class="form-label" for="diningGuest">Full Name</label>
               <input type="text" id="diningGuest" name="dining_guest" class="form-control" placeholder="e.g. David Miller" required>
@@ -339,7 +339,7 @@
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="grid-form-3">
             <div class="form-group">
               <label class="form-label" for="diningDate">Date</label>
               <input type="date" id="diningDate" name="dining_date" class="form-control" required>
@@ -366,7 +366,7 @@
             </div>
           </div>
 
-          <div class="form-group" style="margin-bottom: 1.25rem;">
+          <div class="form-group mb-3">
             <label class="form-label" for="diningPreference">Seating Ambiance Preference</label>
             <select id="diningPreference" name="dining_ambiance" class="form-control">
               <option value="jungle-deck">Open-air Rainforest Deck (Overlooking Valley)</option>
@@ -375,12 +375,12 @@
             </select>
           </div>
 
-          <div class="form-group" style="margin-bottom: 1.5rem;">
+          <div class="form-group mb-4">
             <label class="form-label" for="diningNotes">Dietary Notes / Celebrations</label>
             <textarea id="diningNotes" name="dining_notes" class="form-control" rows="3" placeholder="e.g. Vegetarian, birthday surprise, peanut allergy..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-gold" style="width: 100%;">
+          <button type="submit" class="btn btn-gold btn-full-width">
             Confirm Table Reservation
           </button>
         </form>
@@ -389,74 +389,56 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
-            <div class="logo-symbol" style="background: #ffffff; color: var(--color-primary);">🍃</div>
-            <div class="brand-text">
-              <span class="brand-name">SERENDIVA</span>
-              <span class="brand-tagline" style="color: #f7dfa5;">NATURE RESORT • SRI LANKA</span>
-            </div>
-          </a>
-          <p class="footer-desc">
-            An eco-conscious paradise dedicated to regenerative hospitality, preservation of Ceylon's cloud forests, and authentic culinary journeys.
+        <div>
+          <div class="footer-logo-badge">
+            <img src="assets/images/logo.png" alt="Serendiva" class="footer-logo-img">
+          </div>
+          <p class="footer-text">
+            Eco-friendly nature retreat in Ella, Sri Lanka. Quiet chalets, home-style cuisine, and guided forest tours.
           </p>
         </div>
 
         <div>
-          <h4 class="footer-title">Navigation</h4>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="rooms.html">Chalets & Suites</a>
-            <a href="dining.html">Restaurant & Menu</a>
-            <a href="facilities.html">Resort Facilities</a>
-            <a href="about.html">Our Story & Ethos</a>
-            <a href="contact.html">Contact & Directions</a>
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="rooms.html" class="footer-link">Chalets & Suites</a>
+            <a href="dining.html" class="footer-link">Dining & Menu</a>
+            <a href="facilities.html" class="footer-link">Experiences</a>
+            <a href="about.html" class="footer-link">Our Story</a>
+            <a href="news.html" class="footer-link">News and Events</a>
+            <a href="contact.html" class="footer-link">Contact</a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-title">Experiences</h4>
-          <div class="footer-links">
-            <a href="facilities.html">Ayurvedic Spa</a>
-            <a href="facilities.html">Infinity Forest Pool</a>
-            <a href="facilities.html">Waterfall Treks</a>
-            <a href="facilities.html">Artisan Tea Tasting</a>
-            <a href="dining.html">Traditional Clay Pot Dining</a>
+          <h4 class="footer-heading">Experiences</h4>
+          <div class="footer-links-list">
+            <a href="rooms.html" class="footer-link">Forest Chalets</a>
+            <a href="facilities.html" class="footer-link">Natural Infinity Pool</a>
+            <a href="facilities.html" class="footer-link">Ayurvedic Spa</a>
+            <a href="facilities.html" class="footer-link">Rainforest Trails</a>
+            <a href="facilities.html" class="footer-link">Ceylon Tea Tasting</a>
+            <a href="dining.html" class="footer-link">Clay Pot Dining</a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-title">Resort Concierge</h4>
-          <div class="footer-contact-item">
-            <span>📍</span>
-            <span>Serendiva Nature Sanctuary, Ella Road, Badulla District, Sri Lanka</span>
-          </div>
-          <div class="footer-contact-item">
-            <span>📞</span>
-            <span>+94 57 222 8890 / +94 77 123 4567</span>
-          </div>
-          <div class="footer-contact-item">
-            <span>✉️</span>
-            <span>reservations@serendivaresort.lk</span>
-          </div>
-          <div class="footer-contact-item">
-            <span>🕒</span>
-            <span>Restaurant Hours: 07:00 AM – 10:30 PM Daily</span>
-          </div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <p class="footer-contact-item">📍 Passara Road, Ella, Sri Lanka</p>
+          <p class="footer-contact-item">📞 +94 57 222 8890 / +94 77 123 4567</p>
+          <p class="footer-contact-item">✉️ stay@serendivaresort.lk</p>
+          <p class="footer-contact-item">🕒 Concierge: 06:30 AM – 10:00 PM</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>
-          &copy; 2026 Serendiva Nature Resort. All rights reserved. Registered with Sri Lanka Tourism Development Authority (SLTDA).
-        </div>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Stay</a>
-          <a href="#">Eco-Sustainability Charter</a>
+        <div>&copy; 2026 Serendiva Nature Resort. All rights reserved. Registered with SLTDA.</div>
+        <div class="footer-admin-link-row">
+          <a href="admin.html" class="footer-admin-link">🔒 Staff Portal & SQL Registry</a>
         </div>
       </div>
     </div>

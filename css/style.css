@@ -570,7 +570,8 @@ ul {
   background-color: var(--color-white);
 }
 
-.site-footer {
+.site-footer,
+.footer {
   background-color: var(--color-green);
   color: #ffffff;
   padding: 4rem 0 2rem;
@@ -593,7 +594,8 @@ ul {
   margin-bottom: 0.75rem;
 }
 
-.footer-text {
+.footer-text,
+.footer-desc {
   font-family: var(--font-serif);
   font-size: 1.05rem;
   font-style: italic;
@@ -602,7 +604,8 @@ ul {
   max-width: 320px;
 }
 
-.footer-heading {
+.footer-heading,
+.footer-title {
   font-family: var(--font-serif);
   font-size: 1.15rem;
   font-weight: 600;
@@ -610,18 +613,23 @@ ul {
   margin-bottom: 1rem;
 }
 
-.footer-links-list {
+.footer-links-list,
+.footer-links {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
 }
 
-.footer-link {
+.footer-link,
+.footer-links a {
   font-size: 0.9rem;
   color: #d1d8d2;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.footer-link:hover {
+.footer-link:hover,
+.footer-links a:hover {
   color: #ffffff;
   padding-left: 4px;
 }
@@ -955,4 +963,260 @@ ul {
   color: var(--color-olive);
   font-weight: 500;
   text-decoration: none;
+}
+.event-free-tag {
+  font-size: 0.9rem;
+  color: var(--color-green);
+  font-weight: 600;
+}
+.news-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+}
+.news-card-tag {
+  font-size: 0.85rem;
+  color: var(--color-rust);
+  font-weight: 600;
+}
+.news-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-green);
+  margin: 0.5rem 0;
+}
+.news-card-text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.news-card-date {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+.quote-box {
+  background-color: var(--color-cream-alt);
+  border-left: 3px solid var(--color-rust);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.quote-box-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-green);
+}
+.card-p-2 {
+  padding: 2rem;
+}
+.feature-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.btn-center-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.experiences-banner {
+  background: linear-gradient(180deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: #ffffff;
+  text-align: center;
+}
+.experiences-eyebrow {
+  color: #f7dfa5;
+}
+.experiences-title {
+  color: #ffffff;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+.experiences-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 680px;
+  margin: 0 auto;
+}
+.mb-split {
+  margin-bottom: 5rem;
+}
+.facility-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.facility-desc-lead {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.facility-desc-body {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+.facility-feature-list {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--color-text-main);
+}
+.bg-sand {
+  background: var(--color-bg-sand);
+}
+.bg-sand-section {
+  background-color: var(--color-bg-sand);
+}
+.footer-links-row {
+  display: flex;
+  gap: 1.5rem;
+}
+.dining-hero-banner {
+  background-image: url('../assets/images/dining.jpg');
+  min-height: 60vh;
+}
+.dining-heritage-lead {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+.dining-heritage-body {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+.dining-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.dining-feature-card {
+  background: var(--color-bg-sand);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+}
+.dining-feature-title {
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.dining-feature-text {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+.dining-menu-header {
+  margin-bottom: 2.5rem;
+}
+.container-max-800 {
+  max-width: 800px;
+}
+.dining-booking-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+.dining-booking-header {
+  margin-bottom: 2rem;
+}
+.dining-booking-title {
+  font-size: 2.2rem;
+}
+.dining-booking-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+.grid-form-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.btn-full-width {
+  width: 100%;
+}
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.contact-info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.contact-info-icon {
+  font-size: 1.5rem;
+}
+.contact-info-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-green);
+}
+.contact-info-text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+.contact-pickup-note {
+  background-color: var(--color-cream-alt);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  border-left: 3px solid var(--color-olive);
+}
+.contact-pickup-text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: 0.35rem;
+}
+.contact-form-box {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-subtle);
+}
+.contact-form-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--color-green);
+  margin-bottom: 1.25rem;
+}
+.access-card {
+  padding: 1.75rem;
+}
+.access-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-green);
+  margin-bottom: 0.5rem;
+}
+.access-card-text {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+.menu-tabs-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.badge-tag-green {
+  font-size: 0.85rem;
+  color: var(--color-green);
+  font-weight: 600;
+}
+.badge-tag-rust {
+  font-size: 0.85rem;
+  color: var(--color-rust);
+  font-weight: 600;
+}
+.badge-tag-olive {
+  font-size: 0.85rem;
+  color: var(--color-olive);
+  font-weight: 700;
 }
