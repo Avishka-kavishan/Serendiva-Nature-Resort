@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Serendiva Nature Resort in Ella, Sri Lanka. Eco-friendly chalets, local food, and scenic forest views.">
+  <title>Serendiva Nature Resort - Ella, Sri Lanka</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo.png" alt="Serendiva" class="site-logo-img">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-item active">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="services.html" class="nav-item">Services</a>
+        <a href="news.html" class="nav-item">News and Events</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+      </nav>
+
+      <button class="btn-book-now" data-open-booking>Book Now</button>
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-wrapper" style="background-image: url('assets/images/hero_bg.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-box">
+      <div class="hero-eyebrow">
+        Ayubowan - Welcome to Serendiva
+      </div>
+
+      <h1 class="hero-headline">
+        Discover the
+        <em>Soul of Sri Lanka</em>
+      </h1>
+
+      <p class="hero-subtext">
+        A peaceful nature retreat in the hills of Ella, offering eco-friendly wooden chalets, local dining, and panoramic mountain views.
+      </p>
+
+      <a href="#servicesPreview" class="btn-hero-explore">
+        Explore Our Resort <span>&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="section" id="aboutPreview">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <span class="section-tag">Ayubowan & Welcome</span>
+          <h2 class="section-heading" style="margin-bottom: 1.25rem;">Peaceful Stays in the Hills of Ella</h2>
+          <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 1.25rem; line-height: 1.7;">
+            Serendiva Nature Resort is located along the mountain slopes of Ella, surrounded by tea plantations and natural forest. Built using local timber and stone, our chalets offer a quiet place to relax with fresh mountain air and scenic valley views.
+          </p>
+          <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.7;">
+            During your stay, you can swim in our outdoor pool, taste home-cooked Sri Lankan curries, or join morning walking tours along nearby nature trails.
+          </p>
+          <a href="about.html" class="btn-primary">Learn More About Us &rarr;</a>
+        </div>
+        <div>
+          <div style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-medium); border: 1px solid var(--color-border);">
+            <img src="assets/images/suite.jpg" alt="Serendiva Nature Resort suite overlooking forest">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accommodations Preview -->
+  <section class="section section-alt" id="servicesPreview">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">Accommodations</span>
+        <h2 class="section-heading">Our Wooden Chalets</h2>
+        <p class="section-desc">Each chalet features private balconies, attached bathrooms, and scenic valley views.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="assets/images/suite.jpg" alt="Deluxe Forest Chalet">
+            <span class="card-badge">Popular Choice</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Deluxe Forest Chalet</h3>
+            <p class="card-text">Set along the tree line with a king-size bed, private wooden balcony, and an open bathroom facing the garden.</p>
+            <div class="card-footer">
+              <span class="card-price">$160 / night</span>
+              <button class="btn-outline" data-open-booking data-room="deluxe">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80" alt="River View Pavilion">
+            <span class="card-badge">Stream Side</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">River View Pavilion</h3>
+            <p class="card-text">Located close to the stream with a comfortable outdoor daybed, stone bathtub, and peaceful nature views.</p>
+            <div class="card-footer">
+              <span class="card-price">$220 / night</span>
+              <button class="btn-outline" data-open-booking data-room="river">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="assets/images/hero.jpg" alt="Royal Canopy Suite">
+            <span class="card-badge">Honeymoon Suite</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Royal Canopy Suite</h3>
+            <p class="card-text">Our largest chalet with a private plunge pool, panoramic views of the hills, and a spacious living area.</p>
+            <div class="card-footer">
+              <span class="card-price">$310 / night</span>
+              <button class="btn-outline" data-open-booking data-room="canopy">Reserve</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="services.html" class="btn-primary">View All Services & Dining Menu &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- News & Events -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">Resort Activities</span>
+        <h2 class="section-heading">News and Events</h2>
+        <p class="section-desc">Weekly dining nights, guided tea walks, and cultural events for guests.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="assets/images/dining.jpg" alt="Traditional Clay Pot Dinner">
+          </div>
+          <div class="card-body">
+            <span style="font-size: 0.85rem; color: var(--color-rust); font-weight: 600; margin-bottom: 0.35rem;">Every Friday & Saturday</span>
+            <h3 class="card-title">Traditional Clay Pot Village Buffet</h3>
+            <p class="card-text">Try authentic Sri Lankan dishes including local curries, fresh hoppers, coconut sambol, and sweets cooked in clay pots.</p>
+            <a href="news.html" style="color: var(--color-green); font-weight: 600; margin-top: auto;">Read Details &rarr;</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80" alt="Highland Tea Tasting">
+          </div>
+          <div class="card-body">
+            <span style="font-size: 0.85rem; color: var(--color-rust); font-weight: 600; margin-bottom: 0.35rem;">Weekly Workshop</span>
+            <h3 class="card-title">Artisan Ceylon Tea Plucking & Tasting</h3>
+            <p class="card-text">Take a morning walk through neighboring tea estates, learn traditional plucking methods, and taste single-estate teas.</p>
+            <a href="news.html" style="color: var(--color-green); font-weight: 600; margin-top: auto;">Read Details &rarr;</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Full Moon Meditation">
+          </div>
+          <div class="card-body">
+            <span style="font-size: 0.85rem; color: var(--color-rust); font-weight: 600; margin-bottom: 0.35rem;">Full Moon Poya Day</span>
+            <h3 class="card-title">Poya Night Lanterns & Forest Meditation</h3>
+            <p class="card-text">Celebrate the full moon poya day with floating water lanterns, herbal tea, and a quiet guided meditation session.</p>
+            <a href="news.html" style="color: var(--color-green); font-weight: 600; margin-top: auto;">Read Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <span class="section-tag">Online Booking</span>
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-green); margin-bottom: 0.5rem;">Reserve Your Stay</h3>
+      <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+        Select your stay dates to see price estimates and submit your reservation details.
+      </p>
+
+      <form id="reservationForm">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="resCheckIn">Check-in Date</label>
+            <input type="date" id="resCheckIn" name="check_in" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resCheckOut">Check-out Date</label>
+            <input type="date" id="resCheckOut" name="check_out" class="form-input" required>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="resRoomType">Chalet Category</label>
+            <select id="resRoomType" name="room_type" class="form-select">
+              <option value="160">Deluxe Forest Chalet ($160/night)</option>
+              <option value="220">River View Pavilion ($220/night)</option>
+              <option value="310">Royal Canopy Suite ($310/night)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resGuests">Number of Guests</label>
+            <select id="resGuests" name="guests" class="form-select">
+              <option value="1">1 Adult</option>
+              <option value="2" selected>2 Adults</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults / Family</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="resName">Full Name</label>
+            <input type="text" id="resName" name="full_name" class="form-input" placeholder="e.g. John Smith" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resEmail">Email Address</label>
+            <input type="email" id="resEmail" name="email" class="form-input" placeholder="john@example.com" required>
+          </div>
+        </div>
+
+        <div style="background-color: var(--color-cream-alt); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem; border: 1px dashed var(--color-border);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.95rem;">
+            <span>Calculated Nights:</span>
+            <strong id="displayNights">2 nights</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; color: var(--color-rust); border-top: 1px solid var(--color-border); padding-top: 0.5rem;">
+            <span>Estimated Total:</span>
+            <span id="displayTotal">$320</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-book-now" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 0.8rem;">
+          Confirm Booking
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="background: rgba(251, 248, 241, 0.95); display: inline-block; padding: 4px 10px; border-radius: 6px; margin-bottom: 0.75rem;">
+            <img src="assets/images/logo.png" alt="Serendiva" style="height: 40px; width: auto; display: block;">
+          </div>
+          <p class="footer-text">
+            Eco-friendly nature retreat in Ella, Sri Lanka. Quiet chalets, home-style cuisine, and guided forest tours.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="news.html" class="footer-link">News and Events</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links-list">
+            <a href="services.html" class="footer-link">Forest Chalets</a>
+            <a href="services.html#dining" class="footer-link">Restaurant Menu</a>
+            <a href="services.html#wellness" class="footer-link">Ayurvedic Spa</a>
+            <a href="services.html#activities" class="footer-link">Nature Treks</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <p style="font-size: 0.9rem; color: #d1d8d2; margin-bottom: 0.5rem;">📍 Passara Road, Ella, Sri Lanka</p>
+          <p style="font-size: 0.9rem; color: #d1d8d2; margin-bottom: 0.5rem;">📞 +94 57 222 8890</p>
+          <p style="font-size: 0.9rem; color: #d1d8d2;">✉️ stay@serendivaresort.lk</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Serendiva Nature Resort. All rights reserved.</div>
+        <div>Built for Web Application Development Project.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Serendiva Nature Resort in Ella, Sri Lanka. Location details, inquiries, and transport options.">
+  <title>Contact Us - Serendiva Nature Resort</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo.png" alt="Serendiva" class="site-logo-img">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="services.html" class="nav-item">Services</a>
+        <a href="news.html" class="nav-item">News and Events</a>
+        <a href="contact.html" class="nav-item active">Contact</a>
+      </nav>
+
+      <button class="btn-book-now" data-open-booking>Book Now</button>
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="page-header-eyebrow">Get In Touch</span>
+      <h1 class="page-header-title">Contact & Location</h1>
+      <p class="page-header-subtitle">
+        Have questions about chalet bookings, dining, or getting to Ella? Send us a message.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2">
+        
+        <div>
+          <span class="section-tag">Direct Contact</span>
+          <h2 class="section-heading" style="margin-bottom: 1.25rem;">Reach Our Front Desk</h2>
+          <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.7;">
+            Our reception team is available daily from 7:00 AM to 10:00 PM to help with directions, chalet inquiries, and transport arrangements.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.5rem;">📍</div>
+              <div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-green);">Resort Address</h4>
+                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Passara Road, Ella Foothills, Badulla, Sri Lanka</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.5rem;">📞</div>
+              <div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-green);">Phone & WhatsApp</h4>
+                <p style="color: var(--color-text-muted); font-size: 0.95rem;">+94 57 222 8890 / +94 77 123 4567</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.5rem;">✉️</div>
+              <div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-green);">Email Address</h4>
+                <p style="color: var(--color-text-muted); font-size: 0.95rem;">stay@serendivaresort.lk</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background-color: var(--color-cream-alt); border-radius: var(--radius-sm); padding: 1.25rem; border-left: 3px solid var(--color-olive);">
+            <strong>🚆 Ella Train Station Pickup:</strong>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 0.35rem;">
+              Complimentary pickup from Ella Railway Station is provided for confirmed chalet guests. Please let us know your expected train arrival time.
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div style="background-color: var(--color-white); border-radius: var(--radius-md); padding: 2.5rem; border: 1px solid var(--color-border); box-shadow: var(--shadow-subtle);">
+          <span class="section-tag">Send a Message</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--color-green); margin-bottom: 1.25rem;">Online Inquiry Form</h3>
+
+          <form id="contactInquiryForm">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Your Name</label>
+              <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Liam Davies" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" name="email" class="form-input" placeholder="liam@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactPhone">Phone / Mobile</label>
+              <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+94 7X XXX XXXX">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactSubject">Inquiry Topic</label>
+              <select id="contactSubject" name="subject" class="form-select">
+                <option value="room">Room Reservation Question</option>
+                <option value="dining">Restaurant Table Booking</option>
+                <option value="transport">Train / Airport Transfer</option>
+                <option value="general">General Questions</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMsg">Your Message</label>
+              <textarea id="contactMsg" name="message" class="form-textarea" rows="4" placeholder="How can we assist you with your stay?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Access -->
+  <section class="section section-alt">
+    <div class="container text-center">
+      <span class="section-tag">Travel Access</span>
+      <h2 class="section-heading" style="margin-bottom: 2rem;">How to Reach Us in Ella</h2>
+      
+      <div class="grid-3" style="text-align: left;">
+        <div class="card" style="padding: 1.75rem;">
+          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-green); margin-bottom: 0.5rem;">✈️ From Colombo Airport (BIA)</h3>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">Approximately 4.5 hours by highway. Private car hire can be scheduled ahead of your arrival.</p>
+        </div>
+
+        <div class="card" style="padding: 1.75rem;">
+          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-green); margin-bottom: 0.5rem;">🚂 The Scenic Hill Country Train</h3>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">Regular trains connect Kandy and Nuwara Eliya with Ella Station. We offer station pickup.</p>
+        </div>
+
+        <div class="card" style="padding: 1.75rem;">
+          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-green); margin-bottom: 0.5rem;">🏖️ From the South Coast</h3>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">Around 2.5 to 3 hours drive from Mirissa or Yala National Park through the Wellawaya mountain pass.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <span class="section-tag">Online Booking</span>
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-green); margin-bottom: 0.5rem;">Reserve Your Stay</h3>
+      <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+        Select your stay dates to see price estimates and submit your reservation details.
+      </p>
+
+      <form id="reservationForm">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="resCheckIn">Check-in Date</label>
+            <input type="date" id="resCheckIn" name="check_in" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resCheckOut">Check-out Date</label>
+            <input type="date" id="resCheckOut" name="check_out" class="form-input" required>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="resRoomType">Chalet Category</label>
+            <select id="resRoomType" name="room_type" class="form-select">
+              <option value="160">Deluxe Forest Chalet ($160/night)</option>
+              <option value="220">River View Pavilion ($220/night)</option>
+              <option value="310">Royal Canopy Suite ($310/night)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resGuests">Number of Guests</label>
+            <select id="resGuests" name="guests" class="form-select">
+              <option value="1">1 Adult</option>
+              <option value="2" selected>2 Adults</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults / Family</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="resName">Full Name</label>
+            <input type="text" id="resName" name="full_name" class="form-input" placeholder="e.g. John Smith" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resEmail">Email Address</label>
+            <input type="email" id="resEmail" name="email" class="form-input" placeholder="john@example.com" required>
+          </div>
+        </div>
+
+        <div style="background-color: var(--color-cream-alt); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem; border: 1px dashed var(--color-border);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.95rem;">
+            <span>Calculated Nights:</span>
+            <strong id="displayNights">2 nights</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; color: var(--color-rust); border-top: 1px solid var(--color-border); padding-top: 0.5rem;">
+            <span>Estimated Total:</span>
+            <span id="displayTotal">$320</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-book-now" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 0.8rem;">
+          Confirm Booking
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="background: rgba(251, 248, 241, 0.95); display: inline-block; padding: 4px 10px; border-radius: 6px; margin-bottom: 0.75rem;">
+            <img src="assets/images/logo.png" alt="Serendiva" style="height: 40px; width: auto; display: block;">
+          </div>
+          <p class="footer-text">
+            Eco-friendly nature retreat in Ella, Sri Lanka. Quiet chalets, home-style cuisine, and guided forest tours.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="news.html" class="footer-link">News and Events</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links-list">
+            <a href="services.html" class="footer-link">Forest Chalets</a>
+            <a href="services.html#dining" class="footer-link">Restaurant Menu</a>
+            <a href="services.html#wellness" class="footer-link">Ayurvedic Spa</a>
+            <a href="services.html#activities" class="footer-link">Nature Treks</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <p style="font-size: 0.9rem; color: #d1d8d2; margin-bottom: 0.5rem;">📍 Passara Road, Ella, Sri Lanka</p>
+          <p style="font-size: 0.9rem; color: #d1d8d2; margin-bottom: 0.5rem;">📞 +94 57 222 8890</p>
+          <p style="font-size: 0.9rem; color: #d1d8d2;">✉️ stay@serendivaresort.lk</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Serendiva Nature Resort. All rights reserved.</div>
+        <div>Built for Web Application Development Project.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

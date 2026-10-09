@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Serendiva Nature Resort Restaurant - Authentic Sri Lankan clay pot dining, fresh seafood, organic vegan feasts, and artisan Ceylon tea pairing in Ella.">
+  <title>Dining & Culinary Menu | Serendiva Nature Resort Sri Lanka</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-info">
+        <span>📍 Ella Rainforest Foothills, Sri Lanka</span>
+        <a href="tel:+94572228890">📞 +94 57 222 8890</a>
+        <a href="mailto:stay@serendivaresort.lk">✉️ stay@serendivaresort.lk</a>
+      </div>
+      <div class="top-bar-tools">
+        <span style="font-size:0.75rem;">Currency:</span>
+        <div class="currency-toggle">
+          <button class="currency-btn active" data-currency="USD">USD ($)</button>
+          <button class="currency-btn" data-currency="LKR">LKR (Rs.)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Navigation -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-symbol">🍃</div>
+        <div class="brand-text">
+          <span class="brand-name">SERENDIVA</span>
+          <span class="brand-tagline">NATURE RESORT • SRI LANKA</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="rooms.html" class="nav-link">Chalets & Suites</a>
+        <a href="dining.html" class="nav-link active">Dining & Menu</a>
+        <a href="facilities.html" class="nav-link">Experiences</a>
+        <a href="about.html" class="nav-link">Our Story</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#reserveTable" class="btn btn-gold btn-sm">Reserve A Table</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dining Hero Banner -->
+  <section class="hero-section" style="background-image: url('assets/images/dining.jpg'); min-height: 60vh;">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-tag">🌶️ Farm-to-Table Gastronomy</div>
+      <h1 class="hero-title">The Spices of Serendiva</h1>
+      <p class="hero-subtitle">
+        Celebrated recipes handed down through generations of Sri Lankan hearths, reimagined with our resort's heirloom organic garden harvests and wild Ceylon spices.
+      </p>
+      <div class="hero-buttons">
+        <a href="#menuSection" class="btn btn-gold">Explore The Menu</a>
+        <a href="#reserveTable" class="btn btn-outline-light">Book Table</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culinary Concept Feature -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="split-section">
+        <div class="split-image-frame">
+          <img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=800&q=80" alt="Authentic Sri Lankan Clay Pot Spices">
+          <div class="floating-experience-badge">
+            <div class="floating-badge-number">100%</div>
+            <div class="floating-badge-text">Locally Sourced Organic Produce</div>
+          </div>
+        </div>
+        <div>
+          <span class="section-eyebrow">Our Kitchen Heritage</span>
+          <h2 class="section-title">Cooked with Firewood, Clay Pots & Heartfelt Passion</h2>
+          <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 1.25rem;">
+            At Serendiva, every meal is an authentic Sri Lankan ritual. We grind our own roasted curry powders daily from whole coriander, cumin, and true Ceylon cinnamon bark.
+          </p>
+          <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">
+            Slow earthen clay pot simmering allows spices to infuse deeply into fresh seafood brought daily from the southern coast, heirloom red rice harvested from local paddies, and wild herbs plucked from our garden.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+            <div style="background: var(--color-bg-sand); padding: 1rem; border-radius: var(--radius-md);">
+              <h4 style="color: var(--color-primary); font-size: 1rem; margin-bottom: 0.25rem;">Earthen Clay Pots</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Maintains natural aroma and moisture without artificial additives.</p>
+            </div>
+            <div style="background: var(--color-bg-sand); padding: 1rem; border-radius: var(--radius-md);">
+              <h4 style="color: var(--color-primary); font-size: 1rem; margin-bottom: 0.25rem;">Virgin Coconut Milk</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Freshly pressed by hand from estate coconut palms every sunrise.</p>
+            </div>
+          </div>
+          <a href="#reserveTable" class="btn btn-outline-dark">Book an Outdoor Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Menu Section -->
+  <section class="section-padding" id="menuSection" style="background-color: var(--color-bg-sand);">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 2.5rem;">
+        <span class="section-eyebrow">Our Seasonal A-La-Carte</span>
+        <h2 class="section-title">Curated Restaurant Menu</h2>
+        <p class="section-subtitle">
+          Prices adapt automatically to USD ($) or LKR (Rs.) with the currency selector. Vegetarian, vegan, and gluten-free choices are thoughtfully highlighted.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="menu-filter-nav">
+        <button class="filter-btn active" data-filter="all">All Specialties</button>
+        <button class="filter-btn" data-filter="curries">Sri Lankan Curries</button>
+        <button class="filter-btn" data-filter="seafood">Coastal Seafood</button>
+        <button class="filter-btn" data-filter="breakfast">Artisan Breakfast</button>
+        <button class="filter-btn" data-filter="vegan">Healthy & Plant-Based</button>
+        <button class="filter-btn" data-filter="drinks">Beverages & Ceylon Tea</button>
+      </div>
+
+      <!-- Dish Cards Grid -->
+      <div class="menu-items-grid">
+
+        <!-- Sri Lankan Curries -->
+        <div class="dish-card" data-category="curries">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Clay Pot Curry Feast">
+          </div>
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-name">Royal Clay Pot Rice & 5-Curry Feast</h3>
+              <span class="dish-price" data-price-usd="18">$18</span>
+            </div>
+            <p class="dish-desc">
+              Fragrant organic red heirloom rice served with dhal in rich coconut milk, jackfruit curry, fried aubergine moju, gotu kola sambol, and crispy poppadoms in handcrafted clay pots.
+            </p>
+            <div class="dish-footer">
+              <span class="badge badge-gold">Chef's Signature</span>
+              <div class="spice-meter">🌶️🌶️ Medium Heat</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seafood -->
+        <div class="dish-card" data-category="seafood">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80" alt="Ceylon Pepper Lagoon Crab">
+          </div>
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-name">Ceylon Black Pepper Lagoon Crab</h3>
+              <span class="dish-price" data-price-usd="32">$32</span>
+            </div>
+            <p class="dish-desc">
+              Succulent whole jumbo crab braised in crushed single-estate black peppercorns, garlic chips, wild kaffir leaves, and dark roasted curry jus. Served with warm roast paan.
+            </p>
+            <div class="dish-footer">
+              <span class="badge badge-terracotta">Fresh Catch</span>
+              <div class="spice-meter">🌶️🌶️🌶️ Spicy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seafood -->
+        <div class="dish-card" data-category="seafood">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80" alt="Banana Leaf Wrapped Modha Fish">
+          </div>
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-name">Banana Leaf Grilled Barramundi</h3>
+              <span class="dish-price" data-price-usd="24">$24</span>
+            </div>
+            <p class="dish-desc">
+              Wild ocean barramundi fillet marinated with turmeric, ginger, lemongrass, and tamarind chutney, wrapped in fire-smoked banana leaves and charcoal grilled.
+            </p>
+            <div class="dish-footer">
+              <span class="badge badge-forest">Gluten Free</span>
+              <div class="spice-meter">🌶️ Mild / Gentle</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakfast -->
+        <div class="dish-card" data-category="breakfast">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80" alt="Crispy Hopper Basket">
+          </div>
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-name">Crispy Egg & Plain Hopper Basket</h3>
+              <span class="dish-price" data-price-usd="12">$12</span>
+            </div>
+            <p class="dish-desc">
+              Four golden bowl-shaped fermented rice pancakes with lace edges, one farm-fresh organic egg hopper, accompanied by spicy seeni sambol, lunu miris, and coconut gravy.
+            </p>
+            <div class="dish-footer">
+              <span class="badge badge-gold">Sri Lankan Classic</span>
+              <div class="spice-meter">🌶️🌶️ Medium Heat</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plant-Based & Vegan -->
+        <div class="dish-card" data-category="vegan">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Tender Jackfruit Polos Curry">
+          </div>
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-name">Slow-Braised Young Jackfruit (Polos)</h3>
+              <span class="dish-price" data-price-usd="14">$14</span>
+            </div>
+            <p class="dish-desc">
+              Tender young jackfruit chunks simmered for six hours with goraka, roasted Ceylon spices, and thick thick coconut milk until melt-in-the-mouth perfection.
+            </p>
+            <div class="dish-footer">
+              <span class="badge badge-forest">100% Vegan & GF</span>
+              <div class="spice-meter">🌶️ Mild</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plant-Based & Vegan -->
+        <div class="dish-card" data-category="vegan">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Rainforest Wild Herb Salad">
+          </div>
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-name">Serendiva Garden Wild Herb Bowl</h3>
+              <span class="dish-price" data-price-usd="11">$11</span>
+            </div>
+            <p class="dish-desc">
+              Freshly plucked centella asiatica (gotu kola), pennywort, grated young coconut, shallots, wild lime dressing, pomegranate jewels, and toasted cashew nuts.
+            </p>
+            <div class="dish-footer">
+              <span class="badge badge-forest">Raw & Living</span>
+              <div class="spice-meter">No Spice</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Curries -->
+        <div class="dish-card" data-category="curries">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80" alt="Ceylon Cinnamon Country Chicken">
+          </div>
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-name">Ceylon Cinnamon Hill Country Chicken</h3>
+              <span class="dish-price" data-price-usd="19">$19</span>
+            </div>
+            <p class="dish-desc">
+              Free-range farm chicken stewed with quills of true Alba Ceylon cinnamon, fresh curry leaves, crushed green cardamom, and caramelized red onions.
+            </p>
+            <div class="dish-footer">
+              <span class="badge badge-gold">Heritage Recipe</span>
+              <div class="spice-meter">🌶️🌶️ Medium Heat</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beverages -->
+        <div class="dish-card" data-category="drinks">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=800&q=80" alt="Fresh Golden King Coconut">
+          </div>
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-name">Chilled Organic King Coconut (Thambili)</h3>
+              <span class="dish-price" data-price-usd="5">$5</span>
+            </div>
+            <p class="dish-desc">
+              Harvested fresh from our hillside palms every morning. Naturally rich in natural electrolytes, cut open table-side with fresh lime wedge and bamboo straw.
+            </p>
+            <div class="dish-footer">
+              <span class="badge badge-forest">100% Pure & Fresh</span>
+              <div class="spice-meter">Refreshing</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beverages -->
+        <div class="dish-card" data-category="drinks">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Artisan Silver Tip Ceylon Tea">
+          </div>
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-name">Rare Single-Estate Silver Tips Tea</h3>
+              <span class="dish-price" data-price-usd="7">$7</span>
+            </div>
+            <p class="dish-desc">
+              The world-renowned velvet white tea hand-plucked in pre-dawn mist at 6,000 feet altitude. Brewed in glass teapots with hints of wild honey and pine blossom.
+            </p>
+            <div class="dish-footer">
+              <span class="badge badge-gold">Artisan Reserve</span>
+              <div class="spice-meter">Gentle Floral</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Table Reservation Section -->
+  <section class="section-padding" id="reserveTable">
+    <div class="container" style="max-width: 800px;">
+      <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 3rem 2.5rem; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <span class="section-eyebrow">Table Booking</span>
+          <h2 class="section-title" style="font-size: 2.2rem;">Reserve Your Dining Experience</h2>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+            Both in-house and visiting guests are welcomed. Please reserve at least 2 hours in advance for clay pot buffets or special dietary requirements.
+          </p>
+        </div>
+
+        <form id="tableBookingForm">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="diningGuest">Full Name</label>
+              <input type="text" id="diningGuest" name="dining_guest" class="form-control" placeholder="e.g. David Miller" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="diningPhone">Phone / WhatsApp</label>
+              <input type="tel" id="diningPhone" name="dining_phone" class="form-control" placeholder="+94 7X XXX XXXX" required>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="diningDate">Date</label>
+              <input type="date" id="diningDate" name="dining_date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="diningTime">Time Slot</label>
+              <select id="diningTime" name="dining_time" class="form-control" required>
+                <option value="07:30 AM">07:30 AM - Sunrise Breakfast</option>
+                <option value="01:00 PM">01:00 PM - Hillside Lunch</option>
+                <option value="04:30 PM">04:30 PM - High Tea & Hoppers</option>
+                <option value="07:30 PM" selected>07:30 PM - Candlelit Dinner</option>
+                <option value="08:30 PM">08:30 PM - Late Dinner</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="diningPax">Guests</label>
+              <select id="diningPax" name="dining_pax" class="form-control">
+                <option value="1">1 Person</option>
+                <option value="2" selected>2 Persons</option>
+                <option value="3">3 Persons</option>
+                <option value="4">4 Persons</option>
+                <option value="6+">6+ Group</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label class="form-label" for="diningPreference">Seating Ambiance Preference</label>
+            <select id="diningPreference" name="dining_ambiance" class="form-control">
+              <option value="jungle-deck">Open-air Rainforest Deck (Overlooking Valley)</option>
+              <option value="candlelit">Private Candlelit Garden Table</option>
+              <option value="tea-pavilion">Cozy Teak Pavilion Under Lanterns</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label class="form-label" for="diningNotes">Dietary Notes / Celebrations</label>
+            <textarea id="diningNotes" name="dining_notes" class="form-control" rows="3" placeholder="e.g. Vegetarian, birthday surprise, peanut allergy..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold" style="width: 100%;">
+            Confirm Table Reservation
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-symbol" style="background: #ffffff; color: var(--color-primary);">🍃</div>
+            <div class="brand-text">
+              <span class="brand-name">SERENDIVA</span>
+              <span class="brand-tagline" style="color: #f7dfa5;">NATURE RESORT • SRI LANKA</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            An eco-conscious paradise dedicated to regenerative hospitality, preservation of Ceylon's cloud forests, and authentic culinary journeys.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Chalets & Suites</a>
+            <a href="dining.html">Restaurant & Menu</a>
+            <a href="facilities.html">Resort Facilities</a>
+            <a href="about.html">Our Story & Ethos</a>
+            <a href="contact.html">Contact & Directions</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Experiences</h4>
+          <div class="footer-links">
+            <a href="facilities.html">Ayurvedic Spa</a>
+            <a href="facilities.html">Infinity Forest Pool</a>
+            <a href="facilities.html">Waterfall Treks</a>
+            <a href="facilities.html">Artisan Tea Tasting</a>
+            <a href="dining.html">Traditional Clay Pot Dining</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Resort Concierge</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <span>Serendiva Nature Sanctuary, Ella Road, Badulla District, Sri Lanka</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <span>+94 57 222 8890 / +94 77 123 4567</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>✉️</span>
+            <span>reservations@serendivaresort.lk</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>🕒</span>
+            <span>Restaurant Hours: 07:00 AM – 10:30 PM Daily</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Serendiva Nature Resort. All rights reserved. Registered with Sri Lanka Tourism Development Authority (SLTDA).
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Stay</a>
+          <a href="#">Eco-Sustainability Charter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Services and facilities at Serendiva Nature Resort in Ella, Sri Lanka. Chalets, dining menu, spa, and guided treks.">
+  <title>Services & Dining - Serendiva Nature Resort</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo.png" alt="Serendiva" class="site-logo-img">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="services.html" class="nav-item active">Services</a>
+        <a href="news.html" class="nav-item">News and Events</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+      </nav>
+
+      <button class="btn-book-now" data-open-booking>Book Now</button>
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="page-header-eyebrow">Resort Offerings</span>
+      <h1 class="page-header-title">Our Services & Facilities</h1>
+      <p class="page-header-subtitle">
+        Explore our wooden chalets, open-air restaurant menu, and guided outdoor experiences.
+      </p>
+    </div>
+  </section>
+
+  <!-- Accommodation Chalets -->
+  <section class="section" id="chalets">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">Chalets & Rooms</span>
+        <h2 class="section-heading">Accommodation Options</h2>
+        <p class="section-desc">Handcrafted wooden rooms featuring private verandahs, ensuite bathrooms, and mountain valley views.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="assets/images/suite.jpg" alt="Deluxe Forest Chalet">
+            <span class="card-badge">Deluxe Category</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Deluxe Forest Chalet</h3>
+            <p class="card-text">Set along the tree line with a king-size bed, private forest balcony, ensuite open shower, and complimentary tea tray.</p>
+            <div class="card-footer">
+              <span class="card-price">$160 / night</span>
+              <button class="btn-primary" data-open-booking data-room="deluxe">Book Chalet</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80" alt="River View Pavilion">
+            <span class="card-badge">Stream View</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">River View Pavilion</h3>
+            <p class="card-text">Located close to the natural stream with an outdoor daybed, stone soaking bathtub, and peaceful garden surroundings.</p>
+            <div class="card-footer">
+              <span class="card-price">$220 / night</span>
+              <button class="btn-primary" data-open-booking data-room="river">Book Pavilion</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="assets/images/hero.jpg" alt="Royal Canopy Suite">
+            <span class="card-badge">Suite</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Royal Canopy Suite</h3>
+            <p class="card-text">Our premier chalet featuring a private plunge pool overlooking the valley, four-poster bed, and private lounge area.</p>
+            <div class="card-footer">
+              <span class="card-price">$310 / night</span>
+              <button class="btn-primary" data-open-booking data-room="canopy">Book Suite</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Restaurant Menu -->
+  <section class="section section-alt" id="dining">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">Dining</span>
+        <h2 class="section-heading">Restaurant Menu</h2>
+        <p class="section-desc">Clay pot cooking, fresh coastal seafood, and vegetables harvested from our garden.</p>
+      </div>
+
+      <!-- Menu Category Tabs -->
+      <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+        <button class="btn-outline active menu-tab-btn" data-category="all">All Items</button>
+        <button class="btn-outline menu-tab-btn" data-category="curries">Sri Lankan Curries</button>
+        <button class="btn-outline menu-tab-btn" data-category="seafood">Coastal Seafood</button>
+        <button class="btn-outline menu-tab-btn" data-category="breakfast">Hoppers & Breakfast</button>
+        <button class="btn-outline menu-tab-btn" data-category="drinks">Tea & Fresh Juices</button>
+      </div>
+
+      <!-- Dish Cards Grid -->
+      <div class="grid-3" id="menuCardsContainer">
+        
+        <div class="card menu-card-item" data-cat="curries">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Clay Pot Rice & Curry">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Clay Pot Rice & Curry</h3>
+            <p class="card-text">Steamed red rice served with 5 village vegetable curries, coconut dhal, pol sambol, and papadam.</p>
+            <div class="card-footer">
+              <span class="card-price">$18</span>
+              <span style="font-size: 0.85rem; color: var(--color-green); font-weight: 600;">Traditional</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-card-item" data-cat="seafood">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80" alt="Ceylon Black Pepper Crab">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Black Pepper Lagoon Crab</h3>
+            <p class="card-text">Fresh crab cooked with crushed black peppercorns, garlic, curry leaves, and toasted local spices.</p>
+            <div class="card-footer">
+              <span class="card-price">$32</span>
+              <span style="font-size: 0.85rem; color: var(--color-rust); font-weight: 600;">Chef's Special</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-card-item" data-cat="breakfast">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80" alt="Sri Lankan Egg Hoppers">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Fresh Egg & Plain Hopper Basket</h3>
+            <p class="card-text">Crisp bowl-shaped rice flour pancakes served with spicy onion seeni sambol and traditional lunu miris.</p>
+            <div class="card-footer">
+              <span class="card-price">$12</span>
+              <span style="font-size: 0.85rem; color: var(--color-green); font-weight: 600;">Breakfast Special</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-card-item" data-cat="drinks">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=800&q=80" alt="Fresh King Coconut">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Fresh King Coconut (Thambili)</h3>
+            <p class="card-text">Chilled natural coconut water served straight in the shell with fresh lime.</p>
+            <div class="card-footer">
+              <span class="card-price">$5</span>
+              <span style="font-size: 0.85rem; color: var(--color-green); font-weight: 600;">Fresh & Natural</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-card-item" data-cat="drinks">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Ceylon White Tea">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Single Estate Silver Tips Tea</h3>
+            <p class="card-text">Hand-picked white tea leaves from Nuwara Eliya hills, brewed lightly in porcelain pots.</p>
+            <div class="card-footer">
+              <span class="card-price">$7</span>
+              <span style="font-size: 0.85rem; color: var(--color-olive); font-weight: 700;">Local Blend</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-card-item" data-cat="curries">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Tender Jackfruit Curry">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Village Jackfruit Curry (Polos)</h3>
+            <p class="card-text">Young jackfruit slow-cooked in clay pot with roasted spices, goraka, and thick coconut cream.</p>
+            <div class="card-footer">
+              <span class="card-price">$14</span>
+              <span style="font-size: 0.85rem; color: var(--color-green); font-weight: 600;">Vegan</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Wellness & Activities -->
+  <section class="section" id="wellness">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">Activities</span>
+        <h2 class="section-heading">Wellness & Nature Experiences</h2>
+        <p class="section-desc">Relaxing outdoor facilities and activities for all guests staying at Serendiva.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="padding: 2rem;">
+          <div style="font-size: 2.2rem; margin-bottom: 1rem;">🏊‍♂️</div>
+          <h3 class="card-title">Hillside Outdoor Pool</h3>
+          <p class="card-text">Natural spring-water pool overlooking the Ella valley and forest gap. Open daily for resident guests.</p>
+        </div>
+
+        <div class="card" style="padding: 2rem;">
+          <div style="font-size: 2.2rem; margin-bottom: 1rem;">🌿</div>
+          <h3 class="card-title">Ayurvedic Wellness Spa</h3>
+          <p class="card-text">Herbal oil treatments, herbal steam baths, and relaxation therapies administered by experienced therapists.</p>
+        </div>
+
+        <div class="card" style="padding: 2rem;">
+          <div style="font-size: 2.2rem; margin-bottom: 1rem;">🥾</div>
+          <h3 class="card-title">Guided Nature Treks</h3>
+          <p class="card-text">Morning walks to Ella Rock viewpoints, hidden streams, and local tea estate paths with resort guides.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <span class="section-tag">Online Booking</span>
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-green); margin-bottom: 0.5rem;">Reserve Your Stay</h3>
+      <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+        Select your stay dates to see price estimates and submit your reservation details.
+      </p>
+
+      <form id="reservationForm">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="resCheckIn">Check-in Date</label>
+            <input type="date" id="resCheckIn" name="check_in" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resCheckOut">Check-out Date</label>
+            <input type="date" id="resCheckOut" name="check_out" class="form-input" required>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="resRoomType">Chalet Category</label>
+            <select id="resRoomType" name="room_type" class="form-select">
+              <option value="160">Deluxe Forest Chalet ($160/night)</option>
+              <option value="220">River View Pavilion ($220/night)</option>
+              <option value="310">Royal Canopy Suite ($310/night)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resGuests">Number of Guests</label>
+            <select id="resGuests" name="guests" class="form-select">
+              <option value="1">1 Adult</option>
+              <option value="2" selected>2 Adults</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults / Family</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="resName">Full Name</label>
+            <input type="text" id="resName" name="full_name" class="form-input" placeholder="e.g. John Smith" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resEmail">Email Address</label>
+            <input type="email" id="resEmail" name="email" class="form-input" placeholder="john@example.com" required>
+          </div>
+        </div>
+
+        <div style="background-color: var(--color-cream-alt); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem; border: 1px dashed var(--color-border);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.95rem;">
+            <span>Calculated Nights:</span>
+            <strong id="displayNights">2 nights</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; color: var(--color-rust); border-top: 1px solid var(--color-border); padding-top: 0.5rem;">
+            <span>Estimated Total:</span>
+            <span id="displayTotal">$320</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-book-now" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 0.8rem;">
+          Confirm Booking
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="background: rgba(251, 248, 241, 0.95); display: inline-block; padding: 4px 10px; border-radius: 6px; margin-bottom: 0.75rem;">
+            <img src="assets/images/logo.png" alt="Serendiva" style="height: 40px; width: auto; display: block;">
+          </div>
+          <p class="footer-text">
+            Eco-friendly nature retreat in Ella, Sri Lanka. Quiet chalets, home-style cuisine, and guided forest tours.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="news.html" class="footer-link">News and Events</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links-list">
+            <a href="services.html" class="footer-link">Forest Chalets</a>
+            <a href="services.html#dining" class="footer-link">Restaurant Menu</a>
+            <a href="services.html#wellness" class="footer-link">Ayurvedic Spa</a>
+            <a href="services.html#activities" class="footer-link">Nature Treks</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <p style="font-size: 0.9rem; color: #d1d8d2; margin-bottom: 0.5rem;">📍 Passara Road, Ella, Sri Lanka</p>
+          <p style="font-size: 0.9rem; color: #d1d8d2; margin-bottom: 0.5rem;">📞 +94 57 222 8890</p>
+          <p style="font-size: 0.9rem; color: #d1d8d2;">✉️ stay@serendivaresort.lk</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Serendiva Nature Resort. All rights reserved.</div>
+        <div>Built for Web Application Development Project.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
